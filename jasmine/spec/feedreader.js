@@ -6,14 +6,14 @@ $(function() {
         });
 
         it('urls are defined', () => {
-            for (var feed of allFeeds) {
+            for (let feed of allFeeds) {
                 expect(feed.url).toBeDefined();
                 expect(feed.url.length).not.toBe(0);
             };
         });
 
         it('names are defined', () => {
-            for (var feed of allFeeds) {
+            for (let feed of allFeeds) {
                 expect(feed.name).toBeDefined();
                 expect(feed.name.length).not.toBe(0);
             };
@@ -40,13 +40,14 @@ $(function() {
         });
         
         it('are there any entries', () => {
-           expect($('.entry').length > 0  && $('.feed').length > 0).toBe(true); 
+            const feed = $('.feed .entry');
+           expect(feed.length > 0).toBe(true); 
         });
     });
 
     describe('New Feed Selection', () => {
-        var entriesStart;
-        var entriesEnd;
+        let entriesStart;
+        let entriesEnd;
         
         beforeEach((done) => {
            $('.feed').empty();
