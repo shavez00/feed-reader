@@ -52,12 +52,12 @@ $(function() {
            $('.feed').empty();
            loadFeed(0, function() {
                entriesStart = $('.feed').html();
-               done();
+               loadFeed(1, function() {
+                   entriesEnd = $('.feed').html();
+                   done();
            });
-           loadFeed(1, function() {
-               entriesEnd = $('.feed').html();
-               done();
            });
+           
         });
         
         it('new feed is new content', function() {
