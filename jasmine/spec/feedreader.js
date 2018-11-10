@@ -58,6 +58,13 @@ $(function() {
         it('menu element is hidden', function() {
             expect($('body').hasClass('menu-hidden')).toEqual(true);
         });
+        
+        it('menu works when clicked', function() {
+           $('.menu-icon-link').trigger('click');
+           expect($('body').hasClass('menu-hidden')).toBe(false);
+           $('.menu-icon-link').trigger('click');
+           expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
     });
 
         /* TODO: Write a test that ensures the menu element is
