@@ -78,6 +78,17 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+    describe('Initial Entries', function() {
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                done(0);
+            });
+        });
+        
+        it('are there any entries', function() {
+           expect($('.entry .feed')).toBeDefined(); 
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
