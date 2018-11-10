@@ -1,7 +1,4 @@
 $(function() {
-    var entriesStart;
-    var entriesEnd;
-
     describe('RSS Feeds', function() {
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
@@ -39,25 +36,26 @@ $(function() {
 
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done(0);
-            });
+            loadFeed(0, done);
         });
         
         it('are there any entries', function() {
-           expect($('.entry .feed')).toBeDefined(); 
+           expect($('.entry').length > 0  && $('.feed').length > 0).toBe(true); 
         });
     });
 
     describe('New Feed Selection', function() {
+        var entriesStart;
+        var entriesEnd;
+        
         beforeEach(function(done) {
            $('.feed').empty();
            loadFeed(0, function() {
-               entriesStart = $('.feed').find(allFeeds.url);
+               entriesStart = $('.feed').html();
                done();
            });
            loadFeed(1, function() {
-               entriesEnd = $('.feed').find(allFeeds.url);
+               entriesEnd = $('.feed').html();
                done();
            });
         });
