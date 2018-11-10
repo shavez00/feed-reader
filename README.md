@@ -4,7 +4,7 @@ This is my Udacity Nano-degree project to practice writing tests using Jasmine.
 
 ## Getting Started
 
-Just Git Clone the repository and open the /jasmine/jasmine-html.js file in your browser and the tests will run.
+Just Git Clone the repository and open the index.html file in your browser and the tests will run.
 
 ### Prerequisites
 
